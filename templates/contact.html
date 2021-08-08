@@ -1,0 +1,370 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+
+    <title>GaminghubBD</title>
+
+    <style>
+        .background_nav {
+            background-color: orangered;
+        }
+
+        .card-text1 {
+            background-color: white;
+            color: black;
+            border-radius: 5px;
+        }
+
+        .card-text2 {
+            background-color: white;
+            color: black;
+            border-radius: 5px;
+        }
+
+        .card-text3 {
+            background-color: white;
+            color: black;
+            border-radius: 5px;
+        }
+
+
+
+        @media screen and (max-width: 489px) {
+            .display {
+                height: 70px;
+                width: 329px;
+                border-radius: 5px;
+            }
+
+            .card-text {
+                text-align: center;
+            }
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        .column {
+            float: left;
+            width: 33.3%;
+            margin-bottom: 16px;
+            padding: 0 8px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            margin: 8px;
+        }
+
+        .about-section {
+            padding: 50px;
+            text-align: center;
+            background-color: #474e5d;
+            color: white;
+        }
+
+        .container {
+            padding: 0 16px;
+        }
+
+        .container::after,
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .title {
+            color: grey;
+        }
+
+        .button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+
+        @media screen and (max-width: 650px) {
+            .column {
+                width: 100%;
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    {% if user.is_authenticated %}
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light background_nav">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="{% url 'home' %}"><b>GaminghubBD</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Tournament
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{% url 'pubg' %}">PUBG</a></li>
+                            <li><a class="dropdown-item" href="{% url 'freefire' %}">Free Fire</a></li>
+                            <li><a class="dropdown-item" href="{% url 'pes' %}">PES</a></li>
+                            <li><a class="dropdown-item" href="{% url 'pes' %}">Call Of Duty</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'account' %}">Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="{% url 'contact' %}">Contact</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Welcome {{ user.username }}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{% url 'account' %}">Account</a></li>
+                            <li><a class="dropdown-item" href="{% url 'signout' %}">Sign out</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success text-white" type="submit">Search</button>
+                </form>
+
+
+            </div>
+        </div>
+    </nav>
+    <!-- navbar -->
+
+    
+
+
+
+
+
+
+    <body>
+
+        <div class="about-section">
+          <h1>Contact Us</h1>
+          <p>If you have any enquiry about the app.Please contact with us.</p>
+        </div>
+        <br>
+        <div style="margin: auto;text-align: center;">
+    
+            <div style="margin: auto;text-align: center;"class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+              <div class="card-header">Contact <small>(via Facebook)</small></div>
+              <div class="card-body">
+                <h5 class="card-title">Our Facebook Page : </h5>
+                <p class="card-text1"><a style="text-decoration: none;color: black;"href="https://m.facebook.com/Gaminghubbd-105918891755334/">Gamminghub BD</a></p>
+              </div>
+            </div>
+            <div style="margin: auto;text-align: center;"class="card text-white bg-success mb-3" style="max-width: 18rem;">
+              <div class="card-header">Contact <small>(via Telegram)</small></div>
+              <div class="card-body">
+                <h5 class="card-title">Our Telegram Group : </h5>
+                <p class="card-text2">Telegram</p>
+              </div>
+            </div>
+            <div style="margin: auto;text-align: center;"class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Contact <small>(via Email)</small></div>
+                <div class="card-body">
+                  <h5 class="card-title">Our Email Adress : </h5>
+                  <p class="card-text3">gaminghubbd99@gmail.com</p>
+                </div>
+              </div>
+            </div>
+        
+        <h2 style="text-align:center">Our Team</h2>
+        <div class="row">
+          <div class="column">
+            <div class="card">
+              <img src="{% static 'shariar.jpg' %}" alt="Shariar" style="width:100%">
+              <div class="container">
+                <h2>Shariar Kabir</h2>
+                <p class="title">CEO & Founder</p>
+                <p>Department Of Computer Science & Engineering.</p>
+                <p>shariarkabir13@gmail.com</p>
+                <p><button class="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact</button></p>
+              </div>
+            </div>
+          </div>
+
+
+
+
+           <!-- Modal -->
+           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+           aria-hidden="true">
+           <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+               <div class="modal-content">
+                   <div class="modal-header">
+                       <h5 class="modal-title" id="exampleModalLabel">Information</h5>
+                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                   </div>
+                   <div class="modal-body">
+                       <p>Name : Shariar Kabir</p>
+                       <p>Email : shariarkabir13@gmail.com</p>
+                       <div class="modal-footer">
+                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+
+           
+       </div>
+       <!-- modal -->
+
+
+
+
+
+        
+          <div class="column">
+            <div class="card">
+              <img src="{% static 'albi.jpg' %}" alt="Reduan" style="width:100%">
+              <div class="container">
+                <h2>Reduan Shahriar</h2>
+                <p class="title">CEO & Founder</p>
+                <p>Department Of Computer Science & Engineering.</p>
+                <p>reduan15-2365@diu.edu.bd</p>
+                <p><button class="button" data-bs-toggle="modal" data-bs-target="#exampleModalalbi">Contact</button></p>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+
+
+           <!-- Modal -->
+           <div class="modal fade" id="exampleModalalbi" tabindex="-1" aria-labelledby="exampleModalLabel"
+           aria-hidden="true">
+           <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+               <div class="modal-content">
+                   <div class="modal-header">
+                       <h5 class="modal-title" id="exampleModalLabel">Information</h5>
+                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                   </div>
+                   <div class="modal-body">
+                    <p>Name : Reduan Shahriar</p>
+                    <p>Email : reduan15-2365@diu.edu.bd</p>
+                       <div class="modal-footer">
+                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+
+           
+       </div>
+       <!-- modal -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% else %}
+
+
+
+    <br>
+    <br>
+    <div class="card text-center">
+        <div style="background-color : orangered;color: white;border-radius: 5px;" class="card-header">
+            <h1><b>Hey Genius !</b></h1>
+        </div>
+        <div style="background-color : orangered;color: white;border-radius: 5px;margin-top: 10px;" class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">Welcome to GaminghubBD. Come freely. Go safely. And leave something of the happiness
+                you bring.</p>
+            <a href="{% url 'signinn' %}"
+                style="background-color: white;color: orangered;border-radius: 5px;width: 30%;" class="btn">Login</a>
+            OR
+            <a href="{% url 'signup' %}" style="background-color: white;color: orangered;border-radius: 5px;width: 30%;"
+                class="btn">Register</a>
+        </div>
+        <div style="background-color : orangered;color: white;border-radius: 5px;margin-top: 10px;" class="card-footer">
+            You are Awesome
+        </div>
+    </div>
+
+    {% endif %}
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+
+</html>

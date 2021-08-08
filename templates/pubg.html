@@ -1,0 +1,282 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>PUBG</title>
+
+
+    <style>
+        .background_nav {
+            background-color: orangered;
+        }
+
+        .btn {
+            background-color: white;
+            border: none;
+            color: orangered;
+        }
+
+
+        .card1 {
+            border: 5px solid orangered;
+            border-radius: 5px;
+            background-color: orangered;
+            color: white;
+        }
+
+        .button {
+            background-color: white;
+            border: white;
+            border-radius: 5px;
+            color: orangered;
+            width: 100%;
+        }
+        .card-text1 {
+                text-align: center;
+                border: 1px solid white;
+                border-radius: 5px;
+            }
+        .card-title {
+            background-color: white;
+            color: orangered;
+            border-radius: 5px;
+        }
+
+        @media screen and (max-width: 489px) {
+            .display {
+                height: 70px;
+                width: 329px;
+                border-radius: 5px;
+            }
+
+            .card-text1 {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light background_nav">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="{% url 'home' %}"><b>GaminghubBD</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-black" href="" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Tournament
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{% url 'pubg' %}">PUBG</a></li>
+                            <li><a class="dropdown-item" href="{% url 'freefire' %}">Free Fire</a></li>
+                            <li><a class="dropdown-item" href="{% url 'pes' %}">PES</a></li>
+                            <li><a class="dropdown-item" href="{% url 'pes' %}">Call Of Duty</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'account' %}">Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'contact' %}">Contact</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Welcome {{ user.username }}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{% url 'account' %}">Account</a></li>
+                            <li><a class="dropdown-item" href="{% url 'signout' %}">Sign out</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success text-white" type="submit">Search</button>
+                </form>
+                
+                
+            </div>
+        </div>
+    </nav>
+    <!-- navbar -->
+
+    <br>
+
+
+    <div class="card text-center">
+        <div class="card-header">
+            <img class="display" src="{% static 'pubg3.jpg' %}">
+        </div>
+        <div class="card-body">
+            <h5 style="background-color: orangered;color: white;border-radius: 5px;" class="card-title"><b>PUBG</b></h5>
+            <div style="background-color : orangered;color : white;border: 5px solid orangered;border-radius: 5px;text-align: center;">
+            <p class="card-text1">বাংলাদেশের সবথেকে জনপ্রিয় অনলাইন টুর্নামেন্ট এ আপনাকে সাগতম।এখানে আপনারা নিয়মিত পাবজি ও
+                ফ্রি ফাইয়ার গেম এর টুর্নামেন্ট সহ আরো ছোট বড় নানা ধরনের গেম এর টুর্নামেন্ট খেলতে পারবেন।টুর্নামেন্ট এ
+                বিজয়ীদের জন্য থাকছে আকর্ষণীয় পুরস্কার।আরও টুর্নামেন্ট খেলে জিতে নিতে পারেন স্মার্টফোন।যেকোনো গেম এর
+                ম্যাচ ফি মাত্র ১০ টাকা থেকে ৫০ টাকা পর্যন্ত।এবং পুরস্কার ১০০ টাকা থেকে ১০০০ টাকা পর্যন্ত।ম্যাচ ফি
+                আপনারা বিকাশ নগদ বা রকেট এর মাধ্যমে পরিশধ করতে পারবেন।টাকা পাঠানোর পর আপনার মোবাইল এ কনফারমেশান এস এম
+                এস চলে যাবে।টুর্নামেন্ট খেলার নিয়ম ও টাকা পাঠানোর নিয়ম দেখতে এখানে ক্লিক করুন।</p>
+            <!-- modal -->
+            <!-- Button trigger modal -->
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Click here
+            </button>
+            <br>
+            <br>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Rules</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            প্রথমেই আপনাকে একটি টুর্নামেন্ট সিলেক্ট করতে হবে।তারপরে টুর্নামেন্ট এর Details টা ভাল করে পড়ে নিতে হবে।এরপর টুর্নামেন্ট এর রুলস 
+                            অনুযায়ী আপনাকে রেজিস্ট্রেশান করতে হবে।টুর্নামেন্ট এ রেজিস্ট্রেশান করার জন্য প্রথমে ম্যাচ ফি পরিশোধ করতে হবে।ম্যাচ ফি পরিশোধ করার জন্য প্রথমেই আপনাকে  
+                             বিকাশ/রকেট/নগদ এর মাধ্যমে ০১৮৪৩০৮০৫৯৭ নম্বর এ টাকা পাঠাতে হবে। টাকা পাঠানোর পরে Transaction 
+                            ID নোট করে রাখতে হবে।আর টাকা পাঠানো হয়ে গেলে টুর্নামেন্ট এর জন্য ফর্ম টি পূরণ করতে হবে।
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+            <!-- modal -->
+            <div class="card-footer text-muted">
+            </div>
+        </div>
+    </div>
+
+
+    <br>
+    <div style="width: 90%;margin: auto;">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card1">
+                    <img src="{% static 'pubg2.jpeg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>Entry Fee 10 TAKA</b></h5>
+                        <p class="card-text">➡️ 1st prize : 100 TAKA<br>➡️ 2nd Prize : 70 TAKA<br>➡️ 3rd prize : 50 TAKA<br>
+                            ➡️ Type : Duo (TPP)
+                            <br>
+                            ➡️ Map : Erangle
+                            <br>
+                            ➡️ Registered Team : 0
+                            <br>
+                            ➡️ Minimum Required : 25
+                            <br>
+                            ➡️ Status : Available
+                            <br>
+                            ➡️ Match Time : 18 July 11:30 PM
+                            <br>
+                            ➡️ To
+                            join the match
+                            <br>
+
+                            <a href="{% url 'pubg_join' %}"><button class="button"><b>Click Here</b></button></a>
+                                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card1">
+                    <img src="{% static 'pubg2.jpeg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>Entry Fee Free</b></h5>
+                        <p class="card-text">➡️ 1st prize 50 TAKA.
+                            <br>
+                            ➡️ Type : Duo(TPP)
+                            <br>
+                            ➡️ PUBG Version : 1.5.0
+                            <br>
+                            ➡️ Map : Erangle
+                            <br>
+                            ➡️ Total Team : 40
+                            <br>
+                            ➡️ Registered Team : 29
+                            <br>
+                            ➡️ Status : Available
+                            <br>
+                            ➡️ Match Time : 11 July 11:30 PM
+                            <br>
+                            ➡️ To
+                            join the match
+                            <br>
+                            
+
+                            <a href=""><button class="button"><b>Click Here</b></button></a>
+                                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card1">
+                    <img src="{% static 'pubg2.jpeg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>Entry Fee 20 TAKA</b></h5>
+                        <p class="card-text">➡️ 1st prize : 200 TAKA<br>➡️ 2nd Prize : 150 TAKA<br>➡️ 3rd prize : 100 TAKA<br>
+                            ➡️ Type : solo(TPP)
+                            <br>
+                            ➡️ Map : Erangle
+                            <br>
+                            ➡️ Total Player : 80
+                            <br>
+                            ➡️ Registered Player : 0
+                            <br>
+                            ➡️ Minimum Required : 50
+                            <br>
+                            ➡️ Status : Coming Soon
+                            <br>
+                            ➡️ To
+                            join the match
+                            <br>
+
+                            <a href=""><button class="button"><b>Click Here</b></button></a>
+                                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
